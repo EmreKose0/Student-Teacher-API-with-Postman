@@ -14,7 +14,7 @@ namespace PersonApı.Controllers             //same with TeacherController
         private readonly IPersonRepository _personRepository;
         public StudentController(IPersonRepository personRepository)
         {
-            _personRepository= personRepository;
+            _personRepository = personRepository;
         }
 
         [HttpGet]
@@ -30,7 +30,7 @@ namespace PersonApı.Controllers             //same with TeacherController
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateStudentGPA(Student student,int id)
+        public IActionResult UpdateStudentGPA(Student student, int id)
         {
             return Ok(_personRepository.UpdateStudentGPA(student, id));
         }
@@ -41,5 +41,11 @@ namespace PersonApı.Controllers             //same with TeacherController
         {
             return Ok(_personRepository.DeleteStudent(id));
         }
+        [HttpPost]
+        public IActionResult AddStudent(Student student)
+        {
+            return Ok(_personRepository.AddStudent(student));
+        }
     }
+
 }

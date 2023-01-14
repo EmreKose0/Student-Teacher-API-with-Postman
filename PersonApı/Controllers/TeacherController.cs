@@ -46,5 +46,10 @@ namespace PersonApı.Controllers
         {
             return Ok(_personRepository.DeleteTeacher(id));
         }
+
+        public IActionResult AddTeacher(Teacher teacher)
+        {
+            return Ok(_personRepository.AddTeacher(teacher));
+        }
     }
 }

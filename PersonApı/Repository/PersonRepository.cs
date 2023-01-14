@@ -15,6 +15,23 @@ namespace PersonApı.Repository                  //define same methods and apply
             _context = context;                             //context
         }
 
+        public Student AddStudent(Student student)
+        {
+            var add = _context.Students.Add(student).ToString();
+            _context.SaveChanges();
+            return student;
+
+
+
+        }
+
+        public Teacher AddTeacher(Teacher teacher)
+        {
+            var add= _context.Teachers.Add(teacher).ToString();
+            _context.SaveChanges();
+            return teacher;
+        }
+
         public int DeleteStudent(int id)
         {
             var deleted = _context.Students.FirstOrDefault(p => p.Id == id);

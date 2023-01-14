@@ -19,6 +19,11 @@ namespace PersonApı.Repository
 
         int DeleteTeacher(int id);                          //Delete Teacher by id
 
-        int DeleteStudent(int id);                          //Delete Student by id
+        int DeleteStudent(int id);                         //Delete Student by id
+
+        Student AddStudent(Student student);
+        Teacher AddTeacher(Teacher teacher);
+
+
     }
 }
